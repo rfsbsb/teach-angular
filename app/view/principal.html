@@ -1,0 +1,10 @@
+Principal {{principal.nome}}
+<br>
+<label for="pesquisar">Pesquisar</label>
+<input type="text" ng-model="principal.nome" id="pesquisar" />
+
+<ul>
+    <li ng-repeat="livro in principal.listaDeLivros | filter:principal.nome">
+        {{livro.titulo}}
+    </li>
+</ul>
