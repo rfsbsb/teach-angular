@@ -1,35 +1,10 @@
-APP.factory("LivroService", function($q, $http) {
-  return {
-    listar: function() {
-      var deferred = $q.defer();
-      $http.get('http://localhost:3000/books.json')
-        .success(function(data) {
-          deferred.resolve({
-            autores: data
-          });
-        });
-      return deferred.promise;
-    },
-    incluir: function(campos) {
-      var deferred = $q.defer();
-      $http.post("http://localhost:3000/books.json", campos)
-        .success(function(data){
-          deferred.resolve({
-            autor: data
-          });
-        });
-      return deferred.promise;
-    },
-    editar: function(campos) {
-      var deferred = $q.defer();
-      $http.put("http://localhost:3000/books.json", campos)
-        .success(function(data){
-          deferred.resolve({
-            livro: data
-          });
-        });
-      return deferred.promise;
+APP.factory("LivroService", function($resource) {
+  return $resource('http://localhost:3000/books/:id.json', {id:'@_id'},{
+    update: {
+      method  : 'PUT',
+      url     : 'http://localhost:3000/books/:id.json',
+      params  : { id: '@id' },
+      isArray : false
     }
-
-  };
+  });
 });

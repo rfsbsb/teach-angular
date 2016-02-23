@@ -1,5 +1,24 @@
-<ul>
-  <li ng-repeat="autor in autores">
-    {{autor.nome}}
-  </li>
-</ul>
+<div class="form-group">
+  <a class="btn btn-success" ui-sref="novoAutor">Novo autor</a>
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>
+        Nome
+      </th>
+      <th>
+        Nacionalidade
+      </th>
+      <th>
+        Ações
+      </th>
+    </tr>
+  </thead>
+  <tr ng-repeat="autor in autores">
+    <td>{{autor.nome}}</td>
+    <td>{{autor.nacionalidade}}</td>
+    <td><a class="btn btn-primary" ui-sref="editarAutor({ id: autor.id })">Editar</a></td>
+  </tr>
+</table>

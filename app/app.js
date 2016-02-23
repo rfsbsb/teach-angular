@@ -9,6 +9,14 @@ var APP = angular.module('livroApp', ['ui.router', 'ngResource'])
       url: '/livros',
       templateUrl: 'app/view/livro/index.html',
       controller: 'LivroController'
+    }).state('novoLivro', {
+      url: '/livros/novo',
+      templateUrl: 'app/view/livro/novo.html',
+      controller: 'LivroNovoController'
+    }).state('editarLivro', {
+      url: '/livros/:id/editar',
+      templateUrl: 'app/view/livro/editar.html',
+      controller: 'LivroEditarController'
     }).state('autores', {
       url: '/autores',
       templateUrl: 'app/view/autor/index.html',
