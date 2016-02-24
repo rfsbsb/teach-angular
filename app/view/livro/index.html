@@ -6,7 +6,7 @@
   <thead>
   <tr>
     <th>
-      Nome
+      Título
     </th>
     <th>
       Páginas
@@ -20,8 +20,8 @@
   </tr>
   </thead>
   <tr ng-repeat="livro in livros">
-    <td>{{livro.nome}}</td>
-    <td>{{livro.pages}}</td>
+    <td>{{livro.titulo}}</td>
+    <td>{{livro.paginas}}</td>
     <td>{{livro.author.nome}}</td>
     <td><a class="btn btn-primary" ui-sref="editarLivro({ id: livro.id })">Editar</a></td>
   </tr>
