@@ -1,0 +1,17 @@
+<div ng-repeat="livro in livros">
+  <div class="panel panel-default" ng-class="{'panel-primary': livro.paginas > 300, 'panel-danger': livro.paginas > 400}">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{livro.titulo}}</h3>
+    </div>
+    <div class="panel-body">
+      <dl>
+        <dt>Páginas:</dt>
+        <dd>{{livro.paginas}}</dd>
+        <dt>Autor:</dt>
+        <dd>{{livro.author.nome}}</dd>
+        <dt>Resumo:</dt>
+        <dd>{{livro.resumo}}</dd>
+      </dl>
+    </div>
+  </div>
+</div>
