@@ -22,7 +22,7 @@
   <tr ng-repeat="livro in livros">
     <td>{{livro.titulo}}</td>
     <td>{{livro.paginas}}</td>
-    <td>{{livro.author.nome}}</td>
+    <td><ser-tooltip nacionalidade="{{livro.author.nacionalidade}}" nome="{{livro.author.nome}}"></ser-tooltip></td>
     <td><a class="btn btn-primary" ui-sref="editarLivro({ id: livro.id })">Editar</a></td>
   </tr>
 </table>
