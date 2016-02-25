@@ -14,3 +14,17 @@ APP.directive('serTooltip', function() {
     template: '<span data-toggle="tooltip" data-placement="top" title="{{nacionalidade}}">{{nome}}</span>'
   };
 });
+
+APP.directive("serBrasil", function() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      scope.nacionalidade = attrs.valor;
+      if (scope.nacionalidade == "Brasil") {
+        element.css('color', "green");
+        element.css('font-weight', "bold");
+      }
+    },
+    template: '<div>{{nacionalidade}}</div>'
+  }
+})

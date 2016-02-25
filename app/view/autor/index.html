@@ -18,7 +18,7 @@
   </thead>
   <tr ng-repeat="autor in autores">
     <td><ser-tooltip nacionalidade="{{autor.nacionalidade}}" nome="{{autor.nome}}"></ser-tooltip></td>
-    <td><div ser-brasil>{{autor.nacionalidade}}</div></td>
+    <td><div ser-brasil valor="{{autor.nacionalidade}}"></div></td>
     <td><a class="btn btn-primary" ui-sref="editarAutor({ id: autor.id })">Editar</a></td>
   </tr>
 </table>
