@@ -7,9 +7,13 @@ APP.controller('LivroNovoController', function($scope, $state, $stateParams, Liv
   $scope.autores = AutorService.query();
 
   $scope.criarLivro = function() {
-    $scope.livro.$save(function() {
-      $state.go('livros');
-    });
+    $scope.livro.$save(
+      function() {
+        $state.go('livros');
+      }, function() {
+        $scope.error = "Ocorreu um erro no servidor. Verifique se todos os campos foram preenchidos corretamente.";
+      }
+    );
   };
 });
 

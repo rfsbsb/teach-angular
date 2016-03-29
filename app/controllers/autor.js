@@ -6,9 +6,14 @@ APP.controller('AutorNovoController', function($scope, $state, $stateParams, Aut
   $scope.autor = new AutorService();
 
   $scope.criarAutor = function() {
-    $scope.autor.$save(function() {
-      $state.go('autores');
-    });
+    $scope.autor.$save(
+      function() {
+        $state.go('autores');
+      },
+      function() {
+        $scope.error = "Ocorreu um erro no servidor. Verifique se todos os campos foram preenchidos corretamente.";
+      }
+    );
   };
 });
 

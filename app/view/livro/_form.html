@@ -1,5 +1,9 @@
+<div class="alert alert-danger alert-dismissible" role="alert" ng-show="error">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  {{error}}
+</div>
 <div class="form-group">
-  <label for="nome">Título</label>
+  <label for="titulo">Título</label>
   <input type="text" class="form-control" id="titulo" placeholder="Título" ng-model="livro.titulo">
 </div>
 <div class="form-group">
