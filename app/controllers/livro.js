@@ -11,7 +11,7 @@ APP.controller('LivroNovoController', function($scope, $state, $stateParams, Liv
       function() {
         $state.go('livros');
       }, function() {
-        $scope.error = "Ocorreu um erro no servidor. Verifique se todos os campos foram preenchidos corretamente.";
+        $scope.errorMessage = "Ocorreu um erro no servidor. Verifique se todos os campos foram preenchidos corretamente.";
       }
     );
   };
@@ -26,7 +26,7 @@ APP.controller('LivroEditarController', function($scope, $state, $stateParams, L
       function() {
         $state.go('livros');
       }, function() {
-        $scope.error = "Ocorreu um erro no servidor. Verifique se todos os campos foram preenchidos corretamente.";
+        $scope.errorMessage = "Ocorreu um erro no servidor. Verifique se todos os campos foram preenchidos corretamente.";
       }
     );
   };

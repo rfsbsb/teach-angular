@@ -11,7 +11,7 @@ APP.controller('AutorNovoController', function($scope, $state, $stateParams, Aut
         $state.go('autores');
       },
       function() {
-        $scope.error = "Ocorreu um erro no servidor. Verifique se todos os campos foram preenchidos corretamente.";
+        $scope.errorMessage = "Ocorreu um erro no servidor. Verifique se todos os campos foram preenchidos corretamente.";
       }
     );
   };
@@ -25,7 +25,7 @@ APP.controller('AutorEditarController', function($scope, $state, $stateParams, A
       function() {
         $state.go('autores');
       }, function() {
-        $scope.error = "Ocorreu um erro no servidor. Verifique se todos os campos foram preenchidos corretamente.";
+        $scope.errorMessage = "Ocorreu um erro no servidor. Verifique se todos os campos foram preenchidos corretamente.";
       }
     );
   };
