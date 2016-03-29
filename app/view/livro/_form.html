@@ -1,17 +1,17 @@
 <div class="form-group">
   <label for="nome">Título</label>
-  <input type="text" class="form-control" id="titulo" placeholder="Título" ng-model="book.titulo">
+  <input type="text" class="form-control" id="titulo" placeholder="Título" ng-model="livro.titulo">
 </div>
 <div class="form-group">
   <label for="paginas">Páginas</label>
-  <input type="text" class="form-control" id="paginas" placeholder="Páginas" ng-model="book.paginas">
+  <input type="text" class="form-control" id="paginas" placeholder="Páginas" ng-model="livro.paginas">
 </div>
 <div class="form-group">
   <label for="resumo">Resumo</label>
-  <textarea rows="3" class="form-control" id="resumo" placeholder="Resumo" ng-model="book.resumo"></textarea>
+  <textarea rows="3" class="form-control" id="resumo" placeholder="Resumo" ng-model="livro.resumo"></textarea>
 </div>
 <div class="form-group">
   <label for="autor">Autor</label>
-  <select rows="3" class="form-control" id="autor" ng-model="book.author_id" ng-options="obj.id as obj.nome for obj in autores"></select>
+  <select class="form-control" id="autor" ng-model="livro.autor.id" ng-options="obj.id as obj.nome for obj in autores"></select>
 </div>
 <button type="submit" class="btn btn-default">Salvar</button>

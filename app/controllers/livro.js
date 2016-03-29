@@ -3,22 +3,22 @@ APP.controller('LivroController', function($scope, $state, $stateParams, LivroSe
 });
 
 APP.controller('LivroNovoController', function($scope, $state, $stateParams, LivroService, AutorService) {
-  $scope.book = new LivroService();
+  $scope.livro = new LivroService();
   $scope.autores = AutorService.query();
 
   $scope.criarLivro = function() {
-    $scope.book.$save(function() {
+    $scope.livro.$save(function() {
       $state.go('livros');
     });
   };
 });
 
 APP.controller('LivroEditarController', function($scope, $state, $stateParams, LivroService, AutorService) {
-  $scope.book = LivroService.get({ id: $stateParams.id });
+  $scope.livro = LivroService.get({ id: $stateParams.id });
   $scope.autores = AutorService.query();
 
   $scope.atualizarLivro = function() {
-    $scope.book.$update(function() {
+    $scope.livro.$update(function() {
       $state.go('livros');
     });
   };

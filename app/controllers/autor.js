@@ -3,20 +3,20 @@ APP.controller('AutorController', function($scope, $state, $stateParams, AutorSe
 });
 
 APP.controller('AutorNovoController', function($scope, $state, $stateParams, AutorService) {
-  $scope.author = new AutorService();
+  $scope.autor = new AutorService();
 
   $scope.criarAutor = function() {
-    $scope.author.$save(function() {
+    $scope.autor.$save(function() {
       $state.go('autores');
     });
   };
 });
 
 APP.controller('AutorEditarController', function($scope, $state, $stateParams, AutorService) {
-  $scope.author = AutorService.get({ id: $stateParams.id });
+  $scope.autor = AutorService.get({ id: $stateParams.id });
 
   $scope.atualizarAutor = function() {
-    $scope.author.$update(function() {
+    $scope.autor.$update(function() {
       $state.go('autores');
     });
   };
