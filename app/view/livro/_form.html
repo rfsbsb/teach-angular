@@ -4,7 +4,7 @@
 </div>
 <div class="form-group">
   <label for="titulo">Título</label>
-  <input type="text" class="form-control" id="titulo" placeholder="Título" ng-model="livro.titulo">
+  <input type="text" class="form-control" id="titulo" placeholder="Título" ng-model="livro.titulo" ng-required="true">
 </div>
 <div class="form-group">
   <label for="paginas">Páginas</label>
@@ -16,6 +16,6 @@
 </div>
 <div class="form-group">
   <label for="autor">Autor</label>
-  <select class="form-control" id="autor" ng-model="livro.autor.id" ng-options="obj.id as obj.nome for obj in autores"></select>
+  <select class="form-control" id="autor" ng-model="livro.autor.id" ng-options="obj.id as obj.nome for obj in autores" ng-required="true"></select>
 </div>
 <button type="submit" class="btn btn-default">Salvar</button>

@@ -8,7 +8,10 @@ var APP = angular.module('livroApp', ['ui.router', 'ngResource'])
     }).state('livros', {
       url: '/livros',
       templateUrl: 'app/view/livro/index.html',
-      controller: 'LivroController'
+      controller: 'LivroController',
+      params: {
+        'successMessage': null
+      }
     }).state('novoLivro', {
       url: '/livros/novo',
       templateUrl: 'app/view/livro/novo.html',
@@ -20,7 +23,10 @@ var APP = angular.module('livroApp', ['ui.router', 'ngResource'])
     }).state('autores', {
       url: '/autores',
       templateUrl: 'app/view/autor/index.html',
-      controller: 'AutorController'
+      controller: 'AutorController',
+      params: {
+        'successMessage': null
+      }
     }).state('novoAutor', {
       url: '/autores/novo',
       templateUrl: 'app/view/autor/novo.html',
