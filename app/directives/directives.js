@@ -27,4 +27,23 @@ APP.directive("serBrasil", function() {
     },
     template: '<div>{{nacionalidade}}</div>'
   }
-})
+});
+
+APP.directive("navbarActive", ['$location', function(location) {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      var clazz = "active";
+      var path = element.children().attr('href').substring(1);
+      scope.location = location;
+      scope.$watch('location.path()', function (newPath) {
+        newPath = newPath.split("/")[1];
+        if (path === newPath) {
+          element.addClass(clazz);
+        } else {
+          element.removeClass(clazz);
+        }
+      });
+    }
+  };
+}]);
