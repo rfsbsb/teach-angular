@@ -22,8 +22,12 @@ APP.controller('LivroEditarController', function($scope, $state, $stateParams, L
   $scope.autores = AutorService.query();
 
   $scope.atualizarLivro = function() {
-    $scope.livro.$update(function() {
-      $state.go('livros');
-    });
+    $scope.livro.$update(
+      function() {
+        $state.go('livros');
+      }, function() {
+        $scope.error = "Ocorreu um erro no servidor. Verifique se todos os campos foram preenchidos corretamente.";
+      }
+    );
   };
 });

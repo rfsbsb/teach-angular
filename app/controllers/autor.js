@@ -21,8 +21,12 @@ APP.controller('AutorEditarController', function($scope, $state, $stateParams, A
   $scope.autor = AutorService.get({ id: $stateParams.id });
 
   $scope.atualizarAutor = function() {
-    $scope.autor.$update(function() {
-      $state.go('autores');
-    });
+    $scope.autor.$update(
+      function() {
+        $state.go('autores');
+      }, function() {
+        $scope.error = "Ocorreu um erro no servidor. Verifique se todos os campos foram preenchidos corretamente.";
+      }
+    );
   };
 });
