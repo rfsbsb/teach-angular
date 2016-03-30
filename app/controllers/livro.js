@@ -1,3 +1,4 @@
+var APP =  angular.module('livroApp');
 APP.controller('LivroController', function($scope, $state, $stateParams, LivroService) {
   $scope.livros = LivroService.query();
   $scope.successMessage = $stateParams.successMessage;

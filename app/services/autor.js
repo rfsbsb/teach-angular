@@ -1,3 +1,4 @@
+var APP =  angular.module('livroApp');
 APP.factory("AutorService", function($resource) {
   return $resource('http://localhost:8080/livros/api/autores/:id', {id:'@_id'},{
     update: {

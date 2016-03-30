@@ -1,3 +1,4 @@
+var APP =  angular.module('livroApp');
 APP.directive('serTooltip', function() {
   return {
     restrict: 'E',

@@ -1,3 +1,4 @@
+var APP =  angular.module('livroApp');
 APP.controller('AutorController', function($scope, $state, $stateParams, AutorService) {
   $scope.autores = AutorService.query();
   $scope.successMessage = $stateParams.successMessage;

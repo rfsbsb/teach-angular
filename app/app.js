@@ -1,3 +1,9 @@
+require("angular");
+require("angular-resource");
+require("angular-ui-router");
+$ = jQuery = require('jquery');
+require("bootstrap");
+
 var APP = angular.module('livroApp', ['ui.router', 'ngResource'])
   .config(function ($stateProvider) {
 
@@ -41,3 +47,11 @@ var APP = angular.module('livroApp', ['ui.router', 'ngResource'])
     $state.go('autores');
   });
 
+require("./controllers/autor.js");
+require("./controllers/livro.js");
+require("./controllers/principal.js");
+
+require("./directives/directives");
+
+require("./services/autor");
+require("./services/livro");
