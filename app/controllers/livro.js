@@ -1,10 +1,9 @@
-var APP =  angular.module('livroApp');
-APP.controller('LivroController', function($scope, $state, $stateParams, LivroService) {
+angular.module('livroApp').controller('LivroController', ['$scope', '$state', '$stateParams', 'LivroService', function($scope, $state, $stateParams, LivroService) {
   $scope.livros = LivroService.query();
   $scope.successMessage = $stateParams.successMessage;
-});
+}]);
 
-APP.controller('LivroNovoController', function($scope, $state, $stateParams, LivroService, AutorService) {
+angular.module('livroApp').controller('LivroNovoController', ['$scope', '$state', '$stateParams', 'LivroService', 'AutorService', function($scope, $state, $stateParams, LivroService, AutorService) {
   $scope.livro = new LivroService();
   $scope.autores = AutorService.query();
 
@@ -17,9 +16,9 @@ APP.controller('LivroNovoController', function($scope, $state, $stateParams, Liv
       }
     );
   };
-});
+}]);
 
-APP.controller('LivroEditarController', function($scope, $state, $stateParams, LivroService, AutorService) {
+angular.module('livroApp').controller('LivroEditarController', ['$scope', '$state', '$stateParams', 'LivroService', 'AutorService', function($scope, $state, $stateParams, LivroService, AutorService) {
   $scope.livro = LivroService.get({ id: $stateParams.id });
   $scope.autores = AutorService.query();
 
@@ -32,4 +31,4 @@ APP.controller('LivroEditarController', function($scope, $state, $stateParams, L
       }
     );
   };
-});
+}]);

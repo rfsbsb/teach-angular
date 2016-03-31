@@ -1,10 +1,9 @@
-var APP =  angular.module('livroApp');
-APP.controller('AutorController', function($scope, $state, $stateParams, AutorService) {
+angular.module('livroApp').controller('AutorController', ['$scope', '$state', '$stateParams', 'AutorService', function($scope, $state, $stateParams, AutorService) {
   $scope.autores = AutorService.query();
   $scope.successMessage = $stateParams.successMessage;
-});
+}]);
 
-APP.controller('AutorNovoController', function($scope, $state, $stateParams, AutorService) {
+angular.module('livroApp').controller('AutorNovoController', ['$scope', '$state', '$stateParams', 'AutorService', function($scope, $state, $stateParams, AutorService) {
   $scope.autor = new AutorService();
 
   $scope.criarAutor = function() {
@@ -17,9 +16,9 @@ APP.controller('AutorNovoController', function($scope, $state, $stateParams, Aut
       }
     );
   };
-});
+}]);
 
-APP.controller('AutorEditarController', function($scope, $state, $stateParams, AutorService) {
+angular.module('livroApp').controller('AutorEditarController', ['$scope', '$state', '$stateParams', 'AutorService', function($scope, $state, $stateParams, AutorService) {
   $scope.autor = AutorService.get({ id: $stateParams.id });
 
   $scope.atualizarAutor = function() {
@@ -31,4 +30,4 @@ APP.controller('AutorEditarController', function($scope, $state, $stateParams, A
       }
     );
   };
-});
+}]);

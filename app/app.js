@@ -5,7 +5,7 @@ $ = jQuery = require('jquery');
 require("bootstrap");
 
 var APP = angular.module('livroApp', ['ui.router', 'ngResource'])
-  .config(function ($stateProvider) {
+  .config(['$stateProvider', function ($stateProvider) {
 
     $stateProvider.state('principal', {
       url: '/principal',
@@ -42,16 +42,14 @@ var APP = angular.module('livroApp', ['ui.router', 'ngResource'])
       templateUrl: 'app/view/autor/editar.html',
       controller: 'AutorEditarController'
     });
-  })
-  .run(function($state) {
+  }])
+  .run(['$state', function($state) {
     $state.go('autores');
-  });
+  }]);
 
 require("./controllers/autor.js");
 require("./controllers/livro.js");
 require("./controllers/principal.js");
-
 require("./directives/directives");
-
 require("./services/autor");
 require("./services/livro");

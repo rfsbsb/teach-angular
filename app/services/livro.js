@@ -1,5 +1,4 @@
-var APP =  angular.module('livroApp');
-APP.factory("LivroService", function($resource) {
+angular.module('livroApp').factory("LivroService", ['$resource', function($resource) {
   return $resource('http://localhost:8080/livros/api/livros/:id', {id:'@_id'},{
     update: {
       method  : 'PUT',
@@ -8,4 +7,4 @@ APP.factory("LivroService", function($resource) {
       isArray : false
     }
   });
-});
+}]);

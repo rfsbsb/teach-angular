@@ -1,5 +1,4 @@
-var APP =  angular.module('livroApp');
-APP.directive('serTooltip', function() {
+angular.module('livroApp').directive('serTooltip', function() {
   return {
     restrict: 'E',
     replace: 'true',
@@ -16,7 +15,7 @@ APP.directive('serTooltip', function() {
   };
 });
 
-APP.directive("serBrasil", function() {
+angular.module('livroApp').directive("serBrasil", function() {
   return {
     restrict: 'A',
     link: function(scope, element, attrs) {
@@ -30,7 +29,7 @@ APP.directive("serBrasil", function() {
   }
 });
 
-APP.directive("navbarActive", ['$location', function(location) {
+angular.module('livroApp').directive("navbarActive", ['$location', function(location) {
   return {
     restrict: 'A',
     link: function(scope, element, attrs) {
